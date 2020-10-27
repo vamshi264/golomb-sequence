@@ -87,15 +87,16 @@
 
     <!-- Start of Project section -->
     <section id="project">
-        <form>
+        <form class="project-form">
+
             <label for="test_case_input">Enter No.of Test Cases :</label><br>
-            <input type="number" id="test_case_input" name="test_case_input"  value="0" onchange="addInput();"><br>
+            <input type="number" id="test_case_input" class="form-control" name="test_case_input" placeholder="Enter No.of Test Cases" min="0" max="100" onchange="addInput();"><br>
 
             <div id="multiple_inputs">
 
             </div>
 
-            <input type="submit" value="Submit">
+            <button type="submit" id="submit">Submit</button>
         </form>
 
     </section>
