@@ -290,6 +290,15 @@ img {
   transition: transform 0.3s ease-out;
 }
 
+.source {
+  font-size: 2rem;
+  color: var(--main-red);
+  transition: transform 0.3s ease-out;
+}
+
+.source:hover {
+  background-color: antiquewhite;
+}
 
 
 footer {
