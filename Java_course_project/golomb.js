@@ -10,7 +10,7 @@ function addInput()
 
         for(var i = 0 ; i < amount ; i++)
         {
-            inputs.innerHTML += "<label>Enter Test Case Entry :</label><br><input type='number' value='0' /><br>"; 
+            inputs.innerHTML += "<label>Enter TestCase values :</label><br><input type='text' placeholder='Enter Values' class='js-input'/><br>"; 
         }
         
          
