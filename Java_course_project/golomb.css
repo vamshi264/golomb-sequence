@@ -3,6 +3,7 @@
   --main-red: #be3144;
   --main-blue: #45567d;
   --main-gray: #303841;
+  --main-green: #37af65;
 }
 
 * {
@@ -55,7 +56,8 @@ body {
 
 #heading{
   background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
-  margin: 45px 2px 2px 2px;
+  margin-top: 45px;
+  border-bottom: 4px solid var(--main-red);
 }
 
 h1,
@@ -125,17 +127,13 @@ img {
   background: var(--main-blue);
 }
 
-
-
 .welcome-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
   background-color: #000;
-  background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
-  margin: 0px 2px;
-  
+  background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%); 
 }
 
 .welcome-section > p {
@@ -152,71 +150,85 @@ img {
 }
 
 
-
-.projects-section {
-  text-align: center;
-  padding: 10rem 2rem;
-  background: var(--main-blue);
+#project {
+  background-color: var(--main-gray);
+  border: 4px solid var(--main-red);
 }
 
-.projects-section-header {
-  max-width: 640px;
-  margin: 0 auto 6rem auto;
-  border-bottom: 0.2rem solid var(--main-white);
+.project-form
+{
+  background-image: linear-gradient(115deg,rgba(58, 58, 158, 0.8),rgba(136, 136, 206, 0.7)),url(https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 2.5rem 0.625rem;
+  border-radius: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (max-width: 28.75em) {
-  .projects-section-header {
-    font-size: 4rem;
-  }
-}
-
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-gap: 4rem;
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  margin-bottom: 6rem;
-}
-
-@media (max-width: 30.625em) {
-  .projects-section {
-    padding: 6rem 1rem;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.project {
-  background: var(--main-gray);
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+.form-control {
+  width: 50%;
+  height: 4rem;
+  padding: 0.375rem 0.75rem;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
   border-radius: 2px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.code {
-  color: var(--main-gray);
-  transition: color 0.3s ease-out;
+.js-input {
+  width: 50%;
+  height: 4rem;
+  padding: 0.375rem 0.75rem;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 2px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.project:hover .code {
-  color: #ff7f50;
-}
-
-.project-image {
-  height: calc(100% - 6.8rem);
-  width: 100%;
-  object-fit: cover;
-}
-
-.project-title {
+label {
+  display: flex;
   font-size: 2rem;
-  padding: 2rem 0.5rem;
+  margin-bottom: 0rem;
+  align-items: center;
 }
+
+input {
+  line-height: 200%;
+  width: 70%;
+  align-items: center;
+  display: flex;
+  margin : 0px;
+  font-family : inherit;
+  font-size : inherit;
+  line-height : inherit;
+}
+
+
+button {
+  margin : 0px;
+  font-family : inherit;
+  font-size : inherit;
+  line-height : inherit;
+  border: none;
+}
+
+#submit {
+  display: block;
+  width: 50%;
+  padding: 0.75rem;
+  background: var(--main-green);
+  color: inherit;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
 
 .contact-section {
   display: flex;
@@ -225,7 +237,7 @@ img {
   align-items: center;
   text-align: center;
   width: 100%;
-  height: 80vh;
+  height: 40vh;
   padding: 0 2rem;
   background: var(--main-gray);
 }
@@ -293,7 +305,6 @@ img {
 .source {
   font-size: 2rem;
   color: var(--main-red);
-  transition: transform 0.3s ease-out;
 }
 
 .source:hover {
@@ -308,10 +319,12 @@ footer {
   padding: 2rem;
   background: var(--main-gray);
   border-top: 4px solid var(--main-red);
+  height: 100px;
 }
 
 footer > p {
   margin: 2rem;
+  text-align: center;
 }
 
 footer i {
