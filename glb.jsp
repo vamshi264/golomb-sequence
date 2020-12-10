@@ -23,11 +23,8 @@
         class GolombSequence
         {
             private  long first_term , last_term ;
-
             private Dictionary<Long,Long> golomb_remember = new Hashtable<Long,Long>();
-
             private long sum = 0;
-
             public GolombSequence()
             {
                 ;
@@ -39,19 +36,16 @@
             	last_term = b;
             	sum = 0;
             }
-
             private long findGolomb(long n) 
             {
                 if (n == 1) 
                 {
                     return 1;
                 }
-
                 else if(golomb_remember.get(n) != null)
                 {
                     return  (golomb_remember.get(n));
                 }
-
                 else 
                 {
                     long temp_rem = (1 + findGolomb(n - findGolomb(findGolomb(n - 1))));
@@ -59,7 +53,6 @@
                     return temp_rem;
                 }
             }
-
             public void Golomb_create()
             {
                 for(long k = first_term ; k <= last_term ; k++)
@@ -70,23 +63,17 @@
                         golomb_remember.put(k,temp);
                         sum = sum + temp*temp;
                     }
-
                     else
                     {
                     	sum = sum + golomb_remember.get(k)*golomb_remember.get(k);
                     } 
                 }
-
             }
-
-
             public long get_sum()
             {
                 return sum;
             }
-
         }
-
         %>
         
         
@@ -98,7 +85,10 @@
             for(k=0;k<i;k++)
             {
                 String  s = request.getParameter("num"+k);
-                String [] arr = s.split(" ");
+                s = s.trim();
+                
+                String [] arr = s.split(" ",2);
+                arr[1] = arr[1].trim();
                 
                 try
                 {
@@ -106,24 +96,43 @@
                     int a = Integer.parseInt(arr[0]);
                 	int b = Integer.parseInt(arr[1]);
                 
-            
-                	series.input(a, b);
-                	series.Golomb_create();
+            		if(a<b)
+            		{
+                		series.input(a, b);
+                		series.Golomb_create();
                 
-                	out.println("<tr>");
+                		out.println("<tr>");
                 
-                	out.print("<td>");
-                	out.print(k+1);
-                	out.print("</td>");
+                		out.print("<td>");
+                		out.print(k+1);
+                		out.print("</td>");
                 
-                	out.print("<td>");
-                	out.print(s);
-                	out.print("</td>");
+                		out.print("<td>");
+                		out.print(s);
+                		out.print("</td>");
                 
-                	out.print("<td>");
-                	out.print(series.get_sum());
-                	out.print("</td>");
+                		out.print("<td>");
+                		out.print(series.get_sum());
+                		out.print("</td>");
                 
+                	}
+            		
+            		else
+            		{
+            			out.println("<tr>");
+                        
+                    	out.print("<td>");
+                    	out.print(k+1);
+                    	out.print("</td>");
+                    
+                    	out.print("<td>");
+                    	out.print(s);
+                    	out.print("</td>");
+                    
+                    	out.print("<td>");
+                    	out.print("Invalid Input");
+                    	out.print("</td>");
+            		}
                 }
                 
                 catch (Exception e)
